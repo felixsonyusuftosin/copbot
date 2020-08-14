@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@middleware": "./src/middleware",
+          "@root": "./src/app.js",
+          "@router": "./src/router",
+          "@src": "./src",
+          "@utils": "./src/utils",
+          "@database": "./src/database",
+          "@firebase": "./node_modules/firebase",
+          "@repos":"./src/repos",
+          "@views":"./src/views"
+        }
+      }
+    ]
+  ],
+  "presets": ["@babel/preset-env"]
+}

@@ -1,0 +1,24 @@
+version: '3.2'
+volumes:
+  couchdb_data:
+  opt:
+  var:
+  couchdb_log:
+  persistence:
+  server:
+  populateDB:
+  media:
+services:
+  couchdb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5984:5984
+    volumes:
+      - type: volume
+        source: couchdb_data
+        target: /opt/couchdb/data
+        read_only: False
+    privileged: true
+    env_file: .env
